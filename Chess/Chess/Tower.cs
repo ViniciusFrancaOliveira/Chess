@@ -7,7 +7,7 @@ using Boards;
 
 namespace Chess
 {
-    class Tower : Piece
+    public class Tower : Piece
     {
         public Tower(Board board, Color color) : base(board, color) { }
 

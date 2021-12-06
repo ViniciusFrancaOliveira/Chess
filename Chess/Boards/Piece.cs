@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Boards
 {
@@ -19,6 +15,11 @@ namespace Boards
             Color = color;
             AmountOfMoviments = 0;
             Board = board;
+        }
+
+        public void IncrementAmountOfMovimentos()
+        {
+            AmountOfMoviments++;
         }
     }
 }

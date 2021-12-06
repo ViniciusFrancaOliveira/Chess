@@ -1,20 +1,38 @@
 ﻿using System;
 using Boards;
 using Chess;
-using Chess;
 
-namespace Chess
+namespace Chess_Program
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Board board = new Board(8, 8);
+            try
+            {
+                ChessMatch match = new ChessMatch();
 
-            board.PutPiece(new King(board, Color.Black), new Position(1, 1));
-            board.PutPiece(new Tower(board, Color.White), new Position(5, 4));
+                while (!match.Finished)
+                {
+                    Console.Clear();
+                    Screen.PrintBoard(match.Board);
 
-            Screen.PrintBoard(board);
+                    Console.Write("Origin: ");
+                    Position origin = Screen.ReadChessPosition().ToPosition();
+
+                    Console.Write("Destination: ");
+                    Position destination = Screen.ReadChessPosition().ToPosition();
+
+                    match.ExecuteMoviment(origin, destination);
+                }
+
+                Console.WriteLine();
+                
+            }
+            catch (BoardException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
         }
     }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Boards
 
@@ -45,6 +41,18 @@ namespace Boards
 
             Pieces[position.Row, position.Column] = piece;
             piece.Position = position;
+        }
+
+        public Piece RemovePiece(Position position)
+        {
+            if (Piece(position) == null)
+            {
+                return null;
+            }
+            Piece currentPiece = Piece(position);
+            currentPiece.Position = null;
+            Pieces[position.Row, position.Column] = null;
+            return currentPiece;
         }
 
         public bool ValidPosition(Position position)

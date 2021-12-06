@@ -7,7 +7,7 @@ using Boards;
 
 namespace Chess
 {
-    class ChessPosition
+    public class ChessPosition
     {
         public int Row { get; set; }
         public char Column { get; set; }
