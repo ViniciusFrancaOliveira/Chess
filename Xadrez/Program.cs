@@ -1,4 +1,5 @@
 ﻿using System;
+using Boards;
 
 namespace Xadrez
 {
@@ -6,7 +7,7 @@ namespace Xadrez
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Board board1 = new Board(8, 8);
         }
     }
 }
