@@ -8,8 +8,7 @@ namespace Boards
 {
     public enum Color
     {
-        Branca,
-        Preta,
-
+        White,
+        Black,
     }
 }
