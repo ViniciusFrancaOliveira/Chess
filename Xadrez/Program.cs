@@ -1,6 +1,7 @@
 ﻿using System;
 using Boards;
 using Chess;
+using Xadrez;
 
 namespace Xadrez
 {
@@ -8,13 +9,11 @@ namespace Xadrez
     {
         static void Main(string[] args)
         {
-            Board board1 = new Board(8, 8);
+            ChessPosition position = new ChessPosition('c', 8);
+            Console.WriteLine(position);
 
-            board1.PutPiece(new Tower(board1, Color.Preta), new Position(0, 0));
-            board1.PutPiece(new Tower(board1, Color.Preta), new Position(5, 3));
-            board1.PutPiece(new King(board1, Color.Preta), new Position(7, 1));
+            Console.WriteLine(position.ToPosition());
 
-            Screen.PrintBoard(board1);
         }
     }
 }
